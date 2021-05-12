@@ -49,19 +49,19 @@ client.on("message", async (message) => {
 
 client.on('ready', async() => {
 		const status = {
-			ONLINE: "**Online** <:Online:822476444491448321>",
-			OFFLINE: "**Offline** <:Offline:822476429458407487>",
-			IDLE: "**Idle** <:Idle:822477372586328125>",
-			DND: "**DND** <:DND:822476402711330836>"		
+			ONLINE: "**Online** <a:online:839478653288185936>",
+			OFFLINE: "**Offline** <a:offline:839478659319595018>",
+			IDLE: "**Idle** <a:idle:839493674495639552>",
+			DND: "**DND** <a:dnd:839478656324862042>"		
 		}
 
-		const my = status[client.users.cache.get('730705582683586621').presence.status.toUpperCase()]
-		const yogi = status[client.users.cache.get('772342884325916694').presence.status.toUpperCase()]
-		const opf = status[client.users.cache.get('819525785731203102').presence.status.toUpperCase()]
-		const opmf = status[client.users.cache.get('819525904472342548').presence.status.toUpperCase()]
-		const opm3f = status[client.users.cache.get('819525904472342548').presence.status.toUpperCase()]
+		const my = status[client.users.cache.get('764546128204005436').presence.status.toUpperCase()]
+		const yogi = status[client.users.cache.get('716290028829147198').presence.status.toUpperCase()]
+		const opf = status[client.users.cache.get('822294569223454740').presence.status.toUpperCase()]
+		const opmf = status[client.users.cache.get('825244753377099776').presence.status.toUpperCase()]
+		const opm3f = status[client.users.cache.get('825245034449993748').presence.status.toUpperCase()]
 
-		const livestatuschannel = "823057793862991903";
+		const livestatuschannel = "839478582032203816";
 		const channel = client.channels.cache.get(livestatuschannel)
 
 		const embed = new MessageEmbed()
@@ -69,20 +69,20 @@ client.on('ready', async() => {
 		.addField('`Cloudz Music 1`', opf, true)
 		.addField('`Cloudz Music 2`', opmf, true)
 		.addField('`Cloudz Music 3`', opm3f, true)
-		.addField('`LH ⊱ Glitch (Developer)`', my, true)
-		.addField('`Mr. Yogi (Developer)`', yogi, true)
+		.addField('`THE丶JUИGLΣΣ丶SHIVAMᵀˣ#5290 (Developer)`', my, true)
+		.addField('`𝐙𝐆𝐎𝐃#7663 (Developer)`', yogi, true)
 		.setColor("#FF0000")
 		.setTimestamp()
     		.setThumbnail(client.user.avatarURL())
 		.setFooter(`Powered BY Cloudz Music Music`, client.user.avatarURL());		
-		channel.bulkDelete(2);
+		channel.bulkDelete(10);
 		channel.send(embed).then((msg) => {
 			setInterval(() =>{
-				const my = status[client.users.cache.get('730705582683586621').presence.status.toUpperCase()]
-				const yogi = status[client.users.cache.get('772342884325916694').presence.status.toUpperCase()]
-				const opf = status[client.users.cache.get('819525785731203102').presence.status.toUpperCase()]
-				const opmf = status[client.users.cache.get('819525904472342548').presence.status.toUpperCase()]
-				const opm3f = status[client.users.cache.get('819525904472342548').presence.status.toUpperCase()]
+				const my = status[client.users.cache.get('764546128204005436').presence.status.toUpperCase()]
+				const yogi = status[client.users.cache.get('716290028829147198').presence.status.toUpperCase()]
+				const opf = status[client.users.cache.get('822294569223454740').presence.status.toUpperCase()]
+				const opmf = status[client.users.cache.get('825244753377099776').presence.status.toUpperCase()]
+				const opm3f = status[client.users.cache.get('825245034449993748').presence.status.toUpperCase()]
 				const rembed = new MessageEmbed()
 		                .setTitle('Cloudz Music Status')
                 		.addField('`Cloudz Music 1`', opf, true)
