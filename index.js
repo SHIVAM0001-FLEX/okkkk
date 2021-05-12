@@ -46,39 +46,6 @@ client.on("message", async (message) => {
         }
 })
 
-client.on('guildCreate', guild => {
-  guild.members.fetch //guild.ownerID
-  
-  let embed = new MessageEmbed()
-    .setTitle('**JOINED NEW SERVER**')
-    .setColor("#FF0000")
-    .setDescription("Hey, Developer look I've joined a new server!")
-    .addField('**Server Name**', `${guild.name}`)
-    .addField('**Server ID**', `${guild.id}`)
-    .addField('**Member Count**', `${guild.memberCount}`)
-    .addField('**Owner**', `<@${guild.ownerID}>`)
-    .setThumbnail(guild.iconURL())
-    .setFooter(`Powered BY Cloudz Music Music`, client.user.avatarURL())
-    .setTimestamp();
-  client.channels.cache.get('821302714373242890').send(embed)
-});
-
-client.on('guildDelete', guild => {
-  guild.members.fetch //guild.ownerID
-  
-  let embed = new MessageEmbed()
-    .setTitle('**LEFT A SERVER**')
-    .setColor("#FF0000")
-    .setDescription("Hey, Developer look I've been kicked from a server!")
-    .addField('**Server Name**', `${guild.name}`)
-    .addField('**Server ID**', `${guild.id}`)
-    .addField('**Member Count**', `${guild.memberCount}`)
-    .addField('**Owner**', `<@${guild.ownerID}>`)
-    .setThumbnail(guild.iconURL())
-    .setFooter(`Powered BY Cloudz Music`, client.user.avatarURL())
-    .setTimestamp();
-  client.channels.cache.get('821302747889532968').send(embed)
-});
 
 client.on('ready', async() => {
 		const status = {
@@ -130,29 +97,6 @@ client.on('ready', async() => {
 				msg.edit(rembed);
 			}, 60000);})		
 });
-
-client.on('ready', async => {
-  const v1invadm = `[Invite Me](https://discord.com/oauth2/authorize?client_id=819523401207119872&scope=bot&permissions=8)`
-  const v2invadm = `[Invite Me](https://discord.com/oauth2/authorize?client_id=819525785731203102&scope=bot&permissions=8)`
-  const v3invadm = `[Invite Me](https://discord.com/oauth2/authorize?client_id=819525904472342548&scope=bot&permissions=8)`
-  const v1invnor = `[Invite Me](https://discord.com/oauth2/authorize?client_id=819523401207119872&scope=bot&permissions=36826176)`
-  const v2invnor = `[Invite Me](https://discord.com/oauth2/authorize?client_id=819525785731203102&scope=bot&permissions=36826176)`
-  const v3invnor = `[Invite Me](https://discord.com/oauth2/authorize?client_id=819525904472342548&scope=bot&permissions=36826176)`
-  const gschannel = "823236305546379274"
-  const channel = client.channels.cache.get(gschannel)
-
-  let gs = new MessageEmbed()
-    .setTitle('**Getting Started**')
-    .setThumbnail(client.user.avatarURL())
-    .setColor("#00ffff")
-    .setDescription('**Cloudz Music Prefix - `-`**\n**Cloudz Music 2 Prefix - `$`**\n**Cloudz Music 3 Prefix - `+`**')
-    .addField('**Bot Links With Admin Perms**', `**Cloudz Music - ${v1invadm}\nCloudz Music 2 - ${v2invadm}\nCloudz Music 3 - ${v3invadm}**`)
-    .addField('**Bot Links Without Admin Perms**', `**Cloudz Music - ${v1invnor}\nCloudz Music 2 - ${v2invnor}\nCloudz Music 3 - ${v3invnor}**`)
-    .addField('**Developer**', `<@730705582683586621>, <@772342884325916694>`)
-    .setFooter(`Powered BY Cloudz Music`, client.user.avatarURL())
-    .setTimestamp();
-    // channel.send(gs)
-})
 
 
 //Logging in to discord
